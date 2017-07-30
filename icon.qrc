@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>32x32/打开.png</file>
+        <file>32x32/多点.png</file>
+        <file>32x32/两点.png</file>
+        <file>32x32/面积.png</file>
+        <file>32x32/设置.png</file>
+        <file>32x32/退出.png</file>
+        <file>32x32/暂停.png</file>
+        <file>32x32/pos_64.png</file>
+        <file>32x32/earth.png</file>
+        <file>32x32/土方.png</file>
+        <file>32x32/折线坡度.png</file>
+        <file>32x32/构建.png</file>
+        <file>32x32/关闭.png</file>
+        <file>32x32/清除.png</file>
+        <file>32x32/拾取.png</file>
+        <file>32x32/透视.png</file>
+        <file>32x32/点坡度.png</file>
+        <file>32x32/pos.png</file>
+        <file>32x32/qt.png</file>
+        <file>32x32/采样1.png</file>
+        <file>32x32/镶嵌1.png</file>
+    </qresource>
+</RCC>

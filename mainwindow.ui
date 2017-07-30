@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>地形浏览与分析</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/icon/32x32/earth.png</normaloff>:/icon/32x32/earth.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpenFile"/>
+    <addaction name="actionOpenImage"/>
+    <addaction name="actionDEM"/>
+    <addaction name="actionCloseFile"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>量测工具</string>
+    </property>
+    <addaction name="actionGetCoord"/>
+    <addaction name="actionTwoPointMeasurement"/>
+    <addaction name="actionMultiPointMeasurement"/>
+    <addaction name="actionAreaMeasurement"/>
+    <addaction name="actionVisibility"/>
+    <addaction name="actionEarthWorkVolume"/>
+    <addaction name="actionPointSlop"/>
+    <addaction name="actionLineSlop"/>
+    <addaction name="separator"/>
+    <addaction name="actionClearMeasure"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionInstructions"/>
+    <addaction name="actionQt"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>处理工具</string>
+    </property>
+    <addaction name="actionVPB"/>
+    <addaction name="actionResample"/>
+    <addaction name="actionCompositeImage"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_6"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpenFile"/>
+   <addaction name="actionCloseFile"/>
+   <addaction name="actionExit"/>
+   <addaction name="separator"/>
+   <addaction name="actionGetCoord"/>
+   <addaction name="actionTwoPointMeasurement"/>
+   <addaction name="actionMultiPointMeasurement"/>
+   <addaction name="actionAreaMeasurement"/>
+   <addaction name="actionVisibility"/>
+   <addaction name="actionEarthWorkVolume"/>
+   <addaction name="actionPointSlop"/>
+   <addaction name="actionLineSlop"/>
+   <addaction name="actionClearMeasure"/>
+   <addaction name="separator"/>
+   <addaction name="actionVPB"/>
+   <addaction name="actionResample"/>
+   <addaction name="actionCompositeImage"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpenFile">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/打开.png</normaloff>:/icon/32x32/打开.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开场景</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/退出.png</normaloff>:/icon/32x32/退出.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="toolTip">
+    <string>关闭软件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionTwoPointMeasurement">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/两点.png</normaloff>:/icon/32x32/两点.png</iconset>
+   </property>
+   <property name="text">
+    <string>两点测距</string>
+   </property>
+  </action>
+  <action name="actionMultiPointMeasurement">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/多点.png</normaloff>:/icon/32x32/多点.png</iconset>
+   </property>
+   <property name="text">
+    <string>多点测距</string>
+   </property>
+   <property name="toolTip">
+    <string>多点测距，右键结束选择点</string>
+   </property>
+  </action>
+  <action name="actionAreaMeasurement">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/面积.png</normaloff>:/icon/32x32/面积.png</iconset>
+   </property>
+   <property name="text">
+    <string>面积量测</string>
+   </property>
+   <property name="toolTip">
+    <string>面积量测，右键结束选择点并获得结果</string>
+   </property>
+  </action>
+  <action name="actionVPB">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/构建.png</normaloff>:/icon/32x32/构建.png</iconset>
+   </property>
+   <property name="text">
+    <string>构建地形场景</string>
+   </property>
+   <property name="toolTip">
+    <string>构建OSG地形场景</string>
+   </property>
+  </action>
+  <action name="actionClearMeasure">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/清除.png</normaloff>:/icon/32x32/清除.png</iconset>
+   </property>
+   <property name="text">
+    <string>清除量测结果</string>
+   </property>
+   <property name="toolTip">
+    <string>清除场景中量测结果</string>
+   </property>
+  </action>
+  <action name="actionVisibility">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/透视.png</normaloff>:/icon/32x32/透视.png</iconset>
+   </property>
+   <property name="text">
+    <string>通视分析</string>
+   </property>
+   <property name="toolTip">
+    <string>两点通视分析</string>
+   </property>
+  </action>
+  <action name="actionGetCoord">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/拾取.png</normaloff>:/icon/32x32/拾取.png</iconset>
+   </property>
+   <property name="text">
+    <string>拾取坐标</string>
+   </property>
+   <property name="toolTip">
+    <string>获得选择点的坐标，右键结束拾取</string>
+   </property>
+  </action>
+  <action name="actionEarthWorkVolume">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/土方.png</normaloff>:/icon/32x32/土方.png</iconset>
+   </property>
+   <property name="text">
+    <string>土方量</string>
+   </property>
+   <property name="toolTip">
+    <string>获得选择区域的土方量，右键结束选择点并且获得结果</string>
+   </property>
+  </action>
+  <action name="actionPointSlop">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/点坡度.png</normaloff>:/icon/32x32/点坡度.png</iconset>
+   </property>
+   <property name="text">
+    <string>点坡度</string>
+   </property>
+   <property name="toolTip">
+    <string>获得一点坡度，右键结束量测</string>
+   </property>
+  </action>
+  <action name="actionLineSlop">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/折线坡度.png</normaloff>:/icon/32x32/折线坡度.png</iconset>
+   </property>
+   <property name="text">
+    <string>线坡度</string>
+   </property>
+   <property name="toolTip">
+    <string>获得线段的坡度</string>
+   </property>
+  </action>
+  <action name="actionCloseFile">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/关闭.png</normaloff>:/icon/32x32/关闭.png</iconset>
+   </property>
+   <property name="text">
+    <string>关闭场景</string>
+   </property>
+   <property name="toolTip">
+    <string>关闭已打开场景</string>
+   </property>
+  </action>
+  <action name="actionInstructions">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/earth.png</normaloff>:/icon/32x32/earth.png</iconset>
+   </property>
+   <property name="text">
+    <string>使用说明</string>
+   </property>
+   <property name="toolTip">
+    <string>软件的操作说明</string>
+   </property>
+  </action>
+  <action name="actionQt">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/qt.png</normaloff>:/icon/32x32/qt.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于Qt</string>
+   </property>
+  </action>
+  <action name="actionCompositeImage">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/镶嵌1.png</normaloff>:/icon/32x32/镶嵌1.png</iconset>
+   </property>
+   <property name="text">
+    <string>合成影像</string>
+   </property>
+  </action>
+  <action name="actionResample">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/32x32/采样1.png</normaloff>:/icon/32x32/采样1.png</iconset>
+   </property>
+   <property name="text">
+    <string>重采样</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="text">
+    <string>影像信息</string>
+   </property>
+  </action>
+  <action name="actionDEM">
+   <property name="text">
+    <string>打开DEM</string>
+   </property>
+  </action>
+  <action name="actionOpenImage">
+   <property name="text">
+    <string>打开影像</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>
